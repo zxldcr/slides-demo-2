@@ -1,10 +1,10 @@
-let $buttons = $('#buttonWrapper>button')
+let $buttons = $('#spanWrapper>span')
 let $slides = $('#slides')
 let $images = $slides.children('img')
 let current=0
 
 makeFakeSlides()
-$slides.css({transform:'translateX(-400px)'})
+$slides.css({transform:'translateX(-920px)'})
 bindEvents()
 
 $(next).on('click', function(){
@@ -26,9 +26,9 @@ timer = setInterval(function(){
 })
   
 function bindEvents(){
-$('#buttonWrapper').on('click', 'button', function(e){
-    let $button = $(e.currentTarget) 
-    let index = $button.index()
+$('#spanWrapper').on('click', 'span', function(e){
+    let $span = $(e.currentTarget) 
+    let index = $span.index()
     goToSlide(index)
 })
 }
@@ -45,12 +45,12 @@ console.log(current, index)
 if(current === $buttons.length -1 && index === 0){
     // 最后一张到第一张
     console.log('here')
-    $slides.css({transform:`translateX(${-($buttons.length + 1) * 400}px)`})
+    $slides.css({transform:`translateX(${-($buttons.length + 1) * 920}px)`})
     .one('transitionend', function(){
         $slides.hide()
         $slides.offset() // .offset() 可以触发 re-layout，这是一个高级技术，删掉这行你就会发现 bug，所以只能加上这一行。
         
-        $slides.css({transform:`translateX(${-(index+1)*400}px)`}).show()
+        $slides.css({transform:`translateX(${-(index+1)*920}px)`}).show()
     })
 
 }else if(current === 0 && index === $buttons.length - 1){
@@ -58,11 +58,11 @@ if(current === $buttons.length -1 && index === 0){
     $slides.css({transform:`translateX(0px)`})
     .one('transitionend', function(){
         $slides.hide().offset()
-        $slides.css({transform:`translateX(${-(index+1)*400}px)`}).show()
+        $slides.css({transform:`translateX(${-(index+1)*920}px)`}).show()
     })
 
 }else{
-    $slides.css({transform:`translateX(${- (index+1) * 400}px)`})
+    $slides.css({transform:`translateX(${- (index+1) * 920}px)`})
 }
 current = index
 }
@@ -93,11 +93,11 @@ $slides.prepend($lastCopy)
 //         let index=$button.index()
 //         if(current===$buttons.length-1&&index===0){
 //             //最后一张到第一张
-//         $slides.css({transform:'translateX(${-($buttons.length+1)*400}px)'})
+//         $slides.css({transform:'translateX(${-($buttons.length+1)*920}px)'})
 //             .one('transitionend',function(){
 //                 $slides.hide()
 //                 .offset()
-//                 $slides.css({transform:'translateX(${-(index+1)*400}px)'})
+//                 $slides.css({transform:'translateX(${-(index+1)*920}px)'})
 //                 .show()
 //             })
 //         }else if(current===0&&index===$buttons.length-1){
@@ -106,11 +106,11 @@ $slides.prepend($lastCopy)
 //             .one('transitionend',function(){
 //                 $slides.hide()
 //                 .offset()
-//                 $slides.css({transform:'translateX(${-(index+2)*400}px)'})
+//                 $slides.css({transform:'translateX(${-(index+2)*920}px)'})
 //                 .show()
 //             })
 //         }else{
-//             $slides.css({transform:'translateX(${-(index+1)*400}px)'})
+//             $slides.css({transform:'translateX(${-(index+1)*920}px)'})
 //         } 
 //         current=index    
 //     })
@@ -121,11 +121,11 @@ $slides.prepend($lastCopy)
     //         .one('transitionend',function(){
     //             $slides.hide()
     //             .offset()
-    //             $slides.css({transform:'translateX(-400px)'})
+    //             $slides.css({transform:'translateX(-920px)'})
     //             .show()
     //         })
     //     }else{
-    //         $slides.css({transform:'translateX(-400px)'})
+    //         $slides.css({transform:'translateX(-920px)'})
     //     }   
     //     current=0
     // })
@@ -144,7 +144,7 @@ $slides.prepend($lastCopy)
     //             .show()
     //         })
     //     }else{
-    //         $slides.css({transform:'translateX(-400px)'})
+    //         $slides.css({transform:'translateX(-920px)'})
     //     }   
     //     current=2
     // })
