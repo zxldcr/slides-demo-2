@@ -32,3 +32,6 @@
     background: white;
     outline: none;
 }
+#controls>button:hover{
+    background: rgb(223, 218, 218);
+}
