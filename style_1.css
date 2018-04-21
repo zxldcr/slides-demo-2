@@ -5,6 +5,8 @@
    height: 400px;
    margin: 20px auto;
    overflow: hidden;  
+   border: 1px solid rgb(223, 218, 218);
+   border-radius: 10px;
 }
 .images{
     display: flex;
@@ -16,11 +18,17 @@
 #spanWrapper img{
     width:30px;
     height: 30px;
-    margin: 10px;
+    padding: 3px 10px;
+    border: 1px solid rgb(223, 218, 218);
+    border-radius: 5px;
+}
+#spanWrapper img:hover{
+    background: rgb(37, 37, 37)
 }
 #controls>button{
     margin: 10px;
     padding: 3px;
     border-radius:10px;
     background: white;
+    outline: none;
 }
